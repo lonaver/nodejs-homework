@@ -17,14 +17,6 @@ const getById = async (req, res) => {
 };
 
 const addContact = async (req, res) => {
-  //   const { error } = addSchema.validate(req.body);
-  //   if (error) {
-  //     if (error.details[0].type === "any.required") {
-  //       throw HttpError(400, "missing required " + error.details[0].path[0]);
-  //     } else {
-  //       throw HttpError(400, error.message);
-  //     }
-  //   }
   const result = await contacts.addContact(req.body);
   return res.status(201).json(result);
 };
@@ -40,14 +32,6 @@ const deleteContact = async (req, res) => {
 };
 
 const putContact = async (req, res) => {
-  //   const { error } = addSchema.validate(req.body);
-  //   if (error) {
-  //     if (error.details[0].type === "any.required") {
-  //       throw HttpError(400, "missing required " + error.details[0].path[0]);
-  //     } else {
-  //       throw HttpError(400, error.message);
-  //     }
-  //   }
   const { contactId: id } = req.params;
   const result = await contacts.updateContact(id, req.body);
   console.log(result);
